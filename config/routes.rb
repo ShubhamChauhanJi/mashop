@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "home#landing_page.html.erb"
+  Spree::Core::Engine.routes.draw do
+    get '/about-us', to: 'home#about_us'
+    get '/contact-us', to: 'home#contact_us'
+  end
 end
